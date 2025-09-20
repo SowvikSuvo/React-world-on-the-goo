@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./Country.css";
 
-const Country = ({ country }) => {
+const Country = ({ country, handleVisitedCountries }) => {
   const [Visited, setVisited] = useState(false);
   //   console.log(country.region.region);
   const handleVisited = () => {
     // setVisited(Visited ? false : true);
     setVisited(!Visited);
+    handleVisitedCountries(country);
   };
   return (
     <div className={`country ${Visited && "country-visited"}`}>
